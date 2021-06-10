@@ -2,11 +2,14 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import datetime
 
-# Create your views here.
+
+def home(requests):
+    return HttpResponse("<h1>WELCOME OUR WEBSITE</h1>")
+
 
 
 def greeting(requests):
-    return HttpResponse("HELLO! AND WELCOME TO MY PERSONAL WEBSITE")
+    return HttpResponse("<strong>HELLO! AND WELCOME TO MY PERSONAL WEBSITE</strong>")
 
 
 def introduction(requests):

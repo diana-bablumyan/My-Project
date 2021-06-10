@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import datetime
+import requests
+import json
 
 
 def home(requests):
     return HttpResponse("<h1>WELCOME OUR WEBSITE</h1>")
-
 
 
 def greeting(requests):
@@ -28,4 +29,15 @@ def dict_values(requests):
     dict_str = str(dict_)
     return HttpResponse(dict_str)
 
+
+def json_web(requests):
+    with open("band_json.json", "r") as file:
+        data = json.load(file)
+        dict_ = {}
+        key = 1
+        for data in data['bands']:
+            dict_[f'key{key}'] = data
+            key += 1
+        # str_data = str(data)
+        return render(requests, 'app_1/json_data.html', dict_)
 

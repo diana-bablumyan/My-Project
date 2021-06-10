@@ -7,4 +7,6 @@ urlpatterns = [
     path('introduction/', views.introduction),
     path('datetime/', views.cur_datetime),
     path('dict/', views.dict_values),
+    path('json_web/', views.json_web),
+
 ]

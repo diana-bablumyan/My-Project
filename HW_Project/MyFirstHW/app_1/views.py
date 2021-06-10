@@ -6,7 +6,20 @@ import json
 
 
 def home(requests):
-    return HttpResponse("<h1>WELCOME OUR WEBSITE</h1>")
+    a = {}
+    if requests.method == 'POST':
+        print(requests.POST)
+        a = requests.POST
+        dict_= {}
+
+        dict_['name'] = a.get('fname')
+        dict_['surname'] = a.get('sname')
+        dict_['age'] = a.get('age')
+
+        with open('user.json', 'w') as file:
+             json.dump(dict_, file, indent=4)
+        print('aaa')
+    return render(requests, 'app_1/image.html')
 
 
 def greeting(requests):

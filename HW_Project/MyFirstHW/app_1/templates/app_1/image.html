@@ -1,18 +1,19 @@
 {% load static %}
-<a href="{% url 'json' %}">JSON File</a>
+<body style="background-color:rgb(232, 218, 239);">
 <img src="https://i.pinimg.com/originals/16/06/0c/16060c150be05d911ca781312b9c2e3c.png">
+<h3>URLS</h3>
+<a href="{% url 'json' %}">JSON File</a>
+<br>
+<br>
+<h3>Fill your personal data</h3>
 <form method="post">
     {% csrf_token %}
-    <label for="fname">Input your name:</label>
-    <input type="text" placeholder="name" id="fname" name="fname">
-    <br>
-    <br>
-    <label for="sname">Input your surname:</label>
-    <input type="text" placeholder="surname" id="sname" name="sname">
-    <br>
-    <br>
-    <label for="age">Input your age:</label>
-    <input type="number" placeholder="age" id="age" name="age">
+    <label for="fname">Input your name:</label><br>
+    <input type="text" placeholder="name" id="fname" name="fname"><br>
+    <label for="sname">Input your surname:</label><br>
+    <input type="text" placeholder="surname" id="sname" name="sname"><br>
+    <label for="age">Input your age:</label><br>
+    <input type="number" placeholder="age" id="age" name="age"><br>
     <br>
     <br>
     <input type="submit" value="Submit">
